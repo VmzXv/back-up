@@ -32,7 +32,7 @@ svn co https://github.com/gd0772/package/trunk/luci-app-cpufreq ./package/diy/lu
 # echo '添加 AdGuardHome'
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome ./package/diy/luci-app-adguardhome
 svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome ./package/diy/AdGuardHome
-# echo '添加 dockerman'
+# echo '添加 dockerman @修改默认目录'
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman ./package/diy/luci-app-dockerman
 sed -i "s:/opt/docker:/mnt/mmcblk2p3/docker:g" package/diy/luci-app-dockerman/root/etc/config/dockerman
 # echo '添加 SSR Plus+'
