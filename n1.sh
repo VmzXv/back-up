@@ -61,7 +61,6 @@ sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/diy/ssrplus/luci-app-ssr-plus/
 sed -i 's/PassWall/Pass Wall/g' package/diy/passwall/luci-app-passwall/po/zh-cn/passwall.po
 sed -i 's/msgstr "UPnP"/msgstr "UPnP设置"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
 sed -i 's/Docker CE 容器/Docker容器/g' package/lean/luci-app-docker/po/zh-cn/docker.po
-sed -i 's/"文件浏览器"/"文件浏览"/g' package/diy/luci-app-filebrowser/po/zh-cn/filebrowser.po
 sed -i 's/Turbo ACC 网络加速/网络加速/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 sed -i 's/Turbo ACC 网络加速/网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/带宽监控/统计/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
