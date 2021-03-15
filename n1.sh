@@ -17,8 +17,9 @@ rm -rf ./package/lean/luci-app-jd-dailybonus
 rm -rf ./feeds/luci/applications/luci-app-rp-pppoe-server
 
 # echo '修改 默认IP'
-sed -i "s/192.168.1.1/192.168.123.2/g" package/base-files/files/bin/config_generate
-
+sed -i "s/192.168.1.1/192.168.31.1/g" package/base-files/files/bin/config_generate
+# echo '添加eqos'
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-eqos ./package/diy/luci-app-eqos
 
 # echo '添加 SSR Plus+'
 git clone https://github.com/fw876/helloworld package/diy/ssrplus
