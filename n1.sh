@@ -18,9 +18,8 @@ rm -rf ./feeds/luci/applications/luci-app-rp-pppoe-server
 
 # echo '修改 默认IP'
 sed -i "s/192.168.1.1/192.168.31.1/g" package/base-files/files/bin/config_generate
-# echo '添加eqos'
+# echo '添加 eqos'
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-eqos ./package/diy/luci-app-eqos
-
 # echo '添加 SSR Plus+'
 git clone https://github.com/fw876/helloworld package/diy/ssrplus
 # echo '添加 小猫咪'
@@ -29,10 +28,6 @@ git clone https://github.com/vernesong/OpenClash package/diy/OpenClash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy/passwall
 # echo '添加 HelloWorld'
 git clone https://github.com/jerrykuku/luci-app-vssr package/diy/luci-app-vssr
-# echo '添加 应用过滤'
-git clone https://github.com/destan19/OpenAppFilter package/diy/OpenAppFilter
-# echo '添加 京东签到'
-git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/diy/luci-app-jd-dailybonus
 # echo '添加 SmartDNS'
 git clone https://github.com/pymumu/luci-app-smartdns.git -b lede ./package/diy/luci-app-smartdns
 git clone https://github.com/pymumu/openwrt-smartdns.git ./feeds/packages/net/smartdns
@@ -52,7 +47,6 @@ sed -i 's/Docker CE 容器/Docker容器/g' package/lean/luci-app-docker/po/zh-cn
 sed -i 's/"文件浏览器"/"文件浏览"/g' package/diy/luci-app-filebrowser/po/zh-cn/filebrowser.po
 sed -i 's/Turbo ACC 网络加速/网络加速/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 sed -i 's/Turbo ACC 网络加速/网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
-sed -i 's/MWAN3 分流助手/分流助手/g' package/lean/luci-app-mwan3helper/po/zh-cn/mwan3helper.po
 sed -i 's/带宽监控/统计/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/实时流量监测/流量监测/g' package/lean/luci-app-wrtbwmon/po/zh-cn/wrtbwmon.po
 
