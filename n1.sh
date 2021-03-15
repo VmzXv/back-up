@@ -18,10 +18,20 @@ rm -rf ./feeds/luci/applications/luci-app-rp-pppoe-server
 
 # echo '修改 默认IP'
 sed -i "s/192.168.1.1/192.168.31.1/g" package/base-files/files/bin/config_generate
+# 添加 argon 主题
+git clone https://github.com/jerrykuku/luci-theme-argon.git /package/lean
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argon_new ./package/lean/luci-theme-argon_new
 # 修改 argon 为默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+# 添加主题设置
+git clone https://github.com/jerrykuku/luci-app-argon-config.git package/diy/luci-app-argon-config
 # echo '添加 eqos'
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-eqos ./package/diy/luci-app-eqos
+# echo ‘添加 cpu 限制’
+svn co https://github.com/gd0772/package/trunk/luci-app-cpufreq ./package/diy/luci-app-cpufreq
+# echo '添加 AdGuardHome'
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome ./package/diy/luci-app-adguardhome
+svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome ./package/diy/AdGuardHome
 # echo '添加 SSR Plus+'
 git clone https://github.com/fw876/helloworld package/diy/ssrplus
 # echo '添加 小猫咪'
@@ -30,6 +40,7 @@ git clone https://github.com/vernesong/OpenClash package/diy/OpenClash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy/passwall
 # echo '添加 HelloWorld'
 git clone https://github.com/jerrykuku/luci-app-vssr package/diy/luci-app-vssr
+svn co https://github.com/kenzok8/openwrt-packages/trunk/lua-maxminddb ./package/diy/lua-maxminddb
 # echo '添加 SmartDNS'
 git clone https://github.com/pymumu/luci-app-smartdns.git -b lede ./package/diy/luci-app-smartdns
 git clone https://github.com/pymumu/openwrt-smartdns.git ./feeds/packages/net/smartdns
