@@ -18,6 +18,8 @@ rm -rf ./feeds/luci/applications/luci-app-rp-pppoe-server
 
 # echo '修改 默认IP'
 sed -i "s/192.168.1.1/192.168.31.1/g" package/base-files/files/bin/config_generate
+# 修改 argon 为默认主题
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 # echo '添加 eqos'
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-eqos ./package/diy/luci-app-eqos
 # echo '添加 SSR Plus+'
