@@ -27,6 +27,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/diy/luci-app-argon-config
 # echo '添加 eqos'
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-eqos ./package/diy/luci-app-eqos
+# echo '添加 访问限制'
+svn co https://github.com/gd0772/package/trunk/luci-app-control-webrestriction ./package/diy/luci-app-control-webrestriction
 # echo ‘添加 cpu 限制’
 svn co https://github.com/gd0772/package/trunk/luci-app-cpufreq ./package/diy/luci-app-cpufreq
 # echo '添加 AdGuardHome'
@@ -54,7 +56,6 @@ svn co https://github.com/gd0772/patch/trunk/netdata ./feeds/packages/admin/netd
               
 
 # echo '修改插件名称'
-sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
 sed -i 's/TTYD 终端/命令行/g' package/lean/luci-app-ttyd/po/zh-cn/terminal.po
 sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/diy/ssrplus/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 sed -i 's/PassWall/Pass Wall/g' package/diy/passwall/luci-app-passwall/po/zh-cn/passwall.po
