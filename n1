@@ -1,7 +1,5 @@
 #!/bin/bash
-# https://github.com/gd0772/AutoBuild-OpenWrt
-# common Module by gd0772
-# echo '删除重复多余主题'
+#============================================================
 rm -rf ./feeds/freifunk/themes
 rm -rf ./package/lean/luci-theme-netgear
 rm -rf ./package/lean/luci-theme-argon
@@ -38,8 +36,8 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial .
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome ./package/diy/luci-app-adguardhome
 svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome ./package/diy/AdGuardHome
 # echo '添加 dockerman @修改默认目录'
-svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman ./package/diy/luci-app-dockerman
-sed -i "s:/opt/docker:/mnt/mmcblk2p3/docker:g" package/diy/luci-app-dockerman/root/etc/config/dockerman
+git clone https://github.com/lisaac/luci-app-dockerman.git ./package/diy/luci-app-dockerman
+#sed -i "s:/opt/docker:/mnt/mmcblk2p3/docker:g" package/diy/luci-app-dockerman/root/etc/config/dockerman
 # echo '添加 SSR Plus+'
 git clone https://github.com/fw876/helloworld package/diy/ssrplus
 # echo '添加 小猫咪'
@@ -48,7 +46,7 @@ git clone https://github.com/vernesong/OpenClash package/diy/OpenClash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy/passwall
 # echo '添加 HelloWorld'
 git clone https://github.com/jerrykuku/luci-app-vssr package/diy/luci-app-vssr
-svn co https://github.com/kenzok8/openwrt-packages/trunk/lua-maxminddb ./package/diy/lua-maxminddb
+git clone https://github.com/jerrykuku/lua-maxminddb.git package/diy/lua-maxminddb
 # echo '添加 SmartDNS'
 git clone https://github.com/pymumu/luci-app-smartdns.git -b lede ./package/diy/luci-app-smartdns
 git clone https://github.com/pymumu/openwrt-smartdns.git ./feeds/packages/net/smartdns
@@ -185,4 +183,5 @@ sed -i 's/services/vpn/g' package/diy/OpenClash/luci-app-openclash/luasrc/view/o
 curl -fsSL https://raw.githubusercontent.com/gd0772/patch/main/firewall.user > ./package/network/config/firewall/files/firewall.user
 
 # echo '更新feeds'
-./scripts/feeds update -i
+./scripts/feeds update -a
+./scripts/feeds install -a
